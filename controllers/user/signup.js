@@ -18,7 +18,6 @@ module.exports = async (req, res) => {
         email: email,
         password: hashPassword
       })
-      console.log('여기냐 ??')
       res.status(201).send({ message: '회원가입 성공'})
     } else { // 유저정보가 있다면 중복 이메일
       if (userInfo.dataValues.signoutAt === null) { // 회원탈퇴를 안했으면
@@ -26,10 +25,10 @@ module.exports = async (req, res) => {
       } else { // 회원탈퇴한 기록이 있다면
         let today = new Date()
         let signoutTime = userInfo.dataValues.signoutAt
-        let tomorrow = new Date(signoutTime)
-        tomorrow.setDate(signoutTime.getDate() + 30)
-        console.log('==========',today, tomorrow)
-        if (today > tomorrow === false) { // 회원탈퇴 30일 이전
+        let thirtyDayLater = new Date(signoutTime)
+        thirtyDayLater.setDate(signoutTime.getDate() + 30)
+        
+        if (today > thirtyDayLater === false) { // 회원탈퇴 30일 이전
           res.status(409).send({ message: '회원탈퇴 후 30일이 경과하지 않았습니다' })
         } else { // 회원탈퇴 30일 이후
           await User.destroy({ where: { email: email }})// 30일 이후는 이메일 삭제

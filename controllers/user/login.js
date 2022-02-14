@@ -14,7 +14,6 @@ module.exports = async (req, res) => {
               email: email
           }
       })
-      
       if (userInfo.dataValues.signoutAt !== null) { // 탈퇴한 아이디라면
         res.status(401).send({ message: '회원을 탈퇴한 이메일입니다' })
       } else { // 탈퇴하지 않은 아이디 라면
