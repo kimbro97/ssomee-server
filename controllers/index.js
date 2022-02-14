@@ -3,10 +3,14 @@ module.exports = {
     signout: require('./user/signout'),
     login: require('./user/login'),
 
-    order: require('./order/order'),
+    postOrder: require('./order/postOrder'),
+    getOrder: require('./order/getOrder'),
+    deleteOrder: require('./order/deleteOrder'),
 
-    Order: require('./admin/order'),
+    order: require('./admin/order'),
     permission: require('./admin/permission'),
     rejection: require('./admin/rejection'),
-    defaulter: require('./admin/defaulter')
+    getdefaulter: require('./admin/getDefaulter'),
+    postdefaulter: require('./admin/postdefaulter'),
+    completion: require('./admin/completion'),
 }
