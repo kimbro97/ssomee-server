@@ -19,8 +19,6 @@ module.exports = async (req, res) => {
         }
       })
 
-      console.log('========',orderList[0].step)
-
       if (orderList.length === 0) {
         res.status(200).send({ message: '최근에 주문한 내역이 없습니다' })
       } else if (orderList.length === 1) {
