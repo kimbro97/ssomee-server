@@ -23,7 +23,8 @@ module.exports = (sequelize, DataTypes) => {
     approval: DataTypes.BOOLEAN,
     overdue: DataTypes.BOOLEAN,
     step: DataTypes.STRING,
-    userId: DataTypes.INTEGER
+    userId: DataTypes.INTEGER,
+    completedAt: DataTypes.DATE
   }, {
     sequelize,
     modelName: 'Order',
