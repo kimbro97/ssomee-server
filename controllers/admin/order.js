@@ -16,6 +16,6 @@ module.exports = async (req, res) => {
         },
         order: [['id', 'DESC']]
       })
-      res.status(200).send({ orderList, message: '회원들의 주문 상품을 불러왔습니다' })
+      res.status(200).send({ orderList, message: '회원들의 접수된 주문을 가져왔습니다' })
     }
 }

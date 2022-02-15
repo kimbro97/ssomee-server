@@ -20,10 +20,10 @@ module.exports = async (req, res) => {
       })
 
       if (orderList.length === 0) {
-        res.status(200).send({ message: '최근에 주문한 내역이 없습니다' })
+        res.status(200).send({ message: '새로운 주문을 시작할 수 있습니다' })
       } else if (orderList.length === 1) {
         if (orderList[0].step === 'complete') {
-          res.status(200).send({ message: '새로운 주문을 시작할 수 있습니다.' })
+          res.status(200).send({ message: '새로운 주문을 시작할 수 있습니다' })
         } else {
           res.status(200).send({ orderList, message: '작성중인 주문을 불러왔습니다' })
         }

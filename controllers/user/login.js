@@ -4,8 +4,8 @@ const { signAccessToken } = require('../../modules/token')
 
 module.exports = async (req, res) => {
     const { email, password } = req.body
-    if (!email|| !password) {
-      return res.status(422).send({ message: '로그인을 위해서 모든 정보가 필요합니다.' })
+    if (!email || !password) {
+      return res.status(422).send({ message: '로그인을 위해서 모든 정보가 필요합니다' })
     }
 
     try {

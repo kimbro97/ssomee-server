@@ -8,7 +8,7 @@ module.exports = async (req, res) => {
       res.status(401).send({ message: '관리자가 아니면 접근할 수 없습니다' })
     } else {
       await Order.update({
-        approval: true
+        overdue: true
       }, {
         where: {
           id: req.body.orderId

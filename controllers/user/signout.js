@@ -24,8 +24,7 @@ module.exports = async (req, res) => {
             where: { id: loginUserInfo.id }
           })
 
-          res.status(201).send({ message: '회원탈퇴 되었고 해당 이메일은 30일간 이용불가합니다' })  
+          res.status(200).send({ message: '회원탈퇴 되었고 해당 이메일은 30일간 이용불가합니다' })  
         }
-
     }
 }
